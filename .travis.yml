@@ -12,4 +12,3 @@ script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t 2072076689465/runrun-angular:latest .
   - docker push 2072076689465/runrun-angular:latest
-
