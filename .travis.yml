@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "12"
+  - "10.15.3"
 services:
   - docker
 
@@ -9,7 +9,7 @@ before_install:
 
 script:
   - ng build --prod
-  - echo "Wsf10690700119" | docker login -u "2072076689465" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t 2072076689465/runrun-angular:latest .
   - docker push 2072076689465/runrun-angular:latest
 
